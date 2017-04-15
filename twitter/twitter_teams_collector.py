@@ -18,7 +18,7 @@ teams = pd.read_csv("teams.csv")
 team_list = teams['team_name']
 #team_list = ["Diósgyőri vtk"]
 
-header = "team_name team_tw_name,tw_id,url,created_at,followers,statuses\n"
+header = "team_name,team_tw_name,tw_id,url,created_at,followers,statuses\n"
 text = open("teams_twitter.csv", "a")
 text.write(header)
 text.close()
