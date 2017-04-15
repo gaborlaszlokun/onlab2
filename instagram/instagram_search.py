@@ -20,9 +20,9 @@ def search_team(query):
     try:
         search_result = api.user_search(q=user_name)
         user = api.user(search_result[0].id)
-        return (user.id, user.username, user.full_name, user.website, user.counts['media'], user.counts['followed_by'], user.counts['follows'])
+        return (user.id, user.username, user.counts['media'], user.counts['followed_by'], user.counts['follows'], user.website)
 
     except:
 #        print user_name
-        return ("NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN")
+        return ("NaN", "NaN", "NaN", "NaN", "NaN", "NaN")
         
