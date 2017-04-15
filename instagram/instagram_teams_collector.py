@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Apr 15 16:00:02 2017
-
 @author: ASUS
 """
 
@@ -22,4 +20,5 @@ for num in range(0,len(team_list)):
     team_tup = search_team(team)
     for i in team_tup:
         print i
+        #TODO: csv generate
     print

@@ -1,18 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Apr 15 12:10:04 2017
-
 @author: ASUS
 """
 
 from instagram import InstagramAPI
-import config
 from spec_char_remover import remove_spec
 
 
 client_id = "fb0a9594fbe14e72990c716c33b3f1d7"
 client_secret = "c79a43ed0e8441c2a0ff7b2cc11b9e4a"
 access_token = "2263070228.e029fea.1c3fc5838aea4f5685f9a5964ed36e7e"
+
 # How to get access token:
 #https://instagram.com/oauth/authorize/?client_id=fb0a9594fbe14e72990c716c33b3f1d7&redirect_uri=http://localhost&response_type=token
 
