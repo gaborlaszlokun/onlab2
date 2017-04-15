@@ -26,6 +26,7 @@ for num in range(0,len(team_list)):
     for i in team_tup:
         line += "," + smart_str(i)
     line += "\n"
+    line = line.replace('"',"")
     print line
     line = smart_str(line)
     text = open("teams_insta.csv", "a")
