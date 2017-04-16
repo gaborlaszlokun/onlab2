@@ -13,7 +13,7 @@ team_list = teams['team_name']
 #team_list = ['ujpestfc']
 
 
-header = "team_name,insta_id,ista_name,media_count,followed_by,follows,website\n"
+header = "team_name,team_insta_name,ista_id,media_count,followed_by,follows,website\n"
 text = open("teams_insta.csv", "a")
 text.write(header)
 text.close()
