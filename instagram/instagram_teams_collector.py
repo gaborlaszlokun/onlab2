@@ -6,12 +6,9 @@
 import pandas as pd
 from instagram_search import search_team
 from django.utils.encoding import smart_str
-from spec_char_remover import remove_spec
 
 teams = pd.read_csv("teams.csv")
 team_list = teams['team_name']
-#team_list = ['ujpestfc']
-
 
 header = "team_name,insta_name,ista_id,media_count,followed_by,follows,website\n"
 text = open("teams_insta.csv", "a")

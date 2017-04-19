@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 """
+Created on Tue Apr 18 22:21:19 2017
+
 @author: ASUS
 """
 
-from instagram_search import search_team, get_followers
+from twitter_search import search_team, get_followers
 
 team = "Feyenoord"
 
