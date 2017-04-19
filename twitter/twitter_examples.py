@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Apr 18 22:21:19 2017
-
 @author: ASUS
 """
 
