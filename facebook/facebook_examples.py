@@ -3,8 +3,7 @@
 @author: ASUS
 """
 
-from facebook_crawler import search_team, get_page_data, get_likes
-from django.utils.encoding import smart_str
+from facebook_search import *
 
 team = "ferencváros"
 

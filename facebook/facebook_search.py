@@ -5,9 +5,6 @@ Created on Wed Mar 08 14:21:09 2017
 @author: ASUS
 """
 
-#link = "https://graph.facebook.com/DiamondPlatnumz255?access_token=614700401966588|7af8b0fda1b43f908b8853ed65e8b648"
-#https://graph.facebook.com/v2.6/204153042939851/posts/?fields=message,link,permalink_url,created_time,type,name,id,comments.limit(0).summary(true),shares,likes.limit(0).summary(true),reactions.limit(0).summary(true)&limit=100&access_token=614700401966588|7af8b0fda1b43f908b8853ed65e8b648
-
 import urllib2
 import json
 
@@ -81,19 +78,28 @@ def get_page_fans(query,access_token, start_date, final_date):
         elif hasattr(e, 'reason'):
             return e.reason
 
-def get_likes(team):
-    return get_page_data(team)[3]
-
+def get_name(team):
+    return get_page_data(team)[0]
+    
 def get_id(team):
     return get_page_data(team)[1]
     
-def get_name(team):
-    return get_page_data(team)[0]
+def get_link(team):
+    return get_page_data(team)[2]
+
+def get_likes(team):
+    return get_page_data(team)[3]
+
+def get_talking_about(team):
+    return get_page_data(team)[4]   
     
 def get_category(team):
     return get_page_data(team)[5]
 
 # Some extra links
+
+#link = "https://graph.facebook.com/DiamondPlatnumz255?access_token=614700401966588|7af8b0fda1b43f908b8853ed65e8b648"
+#https://graph.facebook.com/v2.6/204153042939851/posts/?fields=message,link,permalink_url,created_time,type,name,id,comments.limit(0).summary(true),shares,likes.limit(0).summary(true),reactions.limit(0).summary(true)&limit=100&access_token=614700401966588|7af8b0fda1b43f908b8853ed65e8b648
 #https://graph.facebook.com/search?q=manchester+united&type=page&access_token=614700401966588%7C7af8b0fda1b43f908b8853ed65e8b648
 #https://graph.facebook.com/v2.6/barackobama/insights/page_fans_country/lifetime?&since=2016-06-01&until=2016-09-02&access_token=614700401966588|7af8b0fda1b43f908b8853ed65e8b648
 #https://graph.facebook.com/v2.6/7724542745/insights/page_fans_country/lifetime?&since=2016-06-01&until=2016-09-02&access_token=614700401966588|7af8b0fda1b43f908b8853ed65e8b648
