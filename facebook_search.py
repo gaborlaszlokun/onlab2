@@ -28,7 +28,7 @@ def get_correct_page(page_id):
         elif hasattr(e, 'reason'):
             return e.reason
 
-def get_page_data(team):
+def facebook_search_team(team):
     team = team.replace(" ","%20")
     search = search_team(team)
     page_list = []
@@ -43,10 +43,11 @@ def get_page_data(team):
     page_json = get_correct_page(official_page[1])
     page_dict = {'facebook_name' : page_json['name'],
                  'facebook_id' : page_json['id'],
-                 'facebook_url' : page_json['link'],
                  'facebook_likes' : page_json['likes'],
                  'facebook_talking_about_count' : page_json['talking_about_count'],
-                 'facebook_category' : page_json['category']}
+                 'facebook_category' : page_json['category'],
+                 'facebook_url' : page_json['link']
+                 }
     return page_dict
             
 def search_team(query):
@@ -85,22 +86,22 @@ def get_page_fans(query,access_token, start_date, final_date):
             return e.reason
 
 def get_name(team):
-    return get_page_data(team)['facebook_name']
+    return facebook_search_team(team)['facebook_name']
     
 def get_id(team):
-    return get_page_data(team)['facebook_id']
+    return facebook_search_team(team)['facebook_id']
     
 def get_link(team):
-    return get_page_data(team)['facebook_url']
+    return facebook_search_team(team)['facebook_url']
 
 def get_likes(team):
-    return get_page_data(team)['facebook_likes']
+    return facebook_search_team(team)['facebook_likes']
 
 def get_talking_about(team):
-    return get_page_data(team)['facebook_talking_about_count']   
+    return facebook_search_team(team)['facebook_talking_about_count']   
     
 def get_category(team):
-    return get_page_data(team)['facebook_category']
+    return facebook_search_team(team)['facebook_category']
 
 # Some extra links
 
