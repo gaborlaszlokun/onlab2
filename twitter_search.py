@@ -14,11 +14,11 @@ def set_api():
     api = Twitter(auth = OAuth(config["access_key"], config["access_secret"], config["consumer_key"], config["consumer_secret"]))
     return api
         
-def twitter_search_team(query):
+def twitter_search_team(team):
     # create twitter API object
     twitter = set_api()
-    query = remove_spec(query)
-    results = twitter.users.search(q = '"' + query + '"')
+    team = remove_spec(team)
+    results = twitter.users.search(q = '"' + team + '"')
     
     if len(results) > 0:
         user = results[0]
@@ -39,16 +39,29 @@ def twitter_search_team(query):
                      'twitter_url' : url
                      }
         return page_dict
-        return (user["screen_name"], user["id"], url, created_at, user["followers_count"],user["statuses_count"])
     else:
         return ("NaN", "NaN", "NaN", "NaN", "NaN", "NaN")
-        
-def get_followers(query):
-    twitter = set_api()
-    results = twitter.users.search(q = '"' + query + '"')
+ 
+def get_twitter_name(team):
+    results = twitter_search_team(team)
+    return results['twitter_name']
     
-    if len(results) > 0:
-        user = results[0]
-        return user["followers_count"]
-    else:
-        return "NaN"
+def get_twitter_id(team):
+    results = twitter_search_team(team)
+    return results['twitter_id']
+    
+def get_twitter_followers(team):
+    results = twitter_search_team(team)
+    return results['twitter_followers']
+    
+def get_twitter_created_at(team):
+    results = twitter_search_team(team)
+    return results['twitter_created_at']
+    
+def get_twitter_statuses(team):
+    results = twitter_search_team(team)
+    return results['twitter_statuses']
+       
+def get_twitter_url(team):
+    results = twitter_search_team(team)
+    return results['twitter_url']
