@@ -10,7 +10,7 @@ import urllib2
 
 # load our API credentials 
 config = {}
-execfile("config.py", config)
+execfile("twitter_config.py", config)
     
 def search_team(query):
     # create twitter API object
