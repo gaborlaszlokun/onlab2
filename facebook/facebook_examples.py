@@ -5,13 +5,15 @@
 
 from facebook_search import *
 
-team = "ferencváros"
+team = "mtk budapest"
 
-for i in get_page_data(team):
-    print i
+#for i in get_page_data(team):
+#    print i
  
-print get_page_data(team)[0]   
-print get_likes(team), "kedvelés"
+print get_page_data(team)
+
+#print get_name(team), get_likes(team), "kedvelés"
+
 
 
 

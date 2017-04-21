@@ -34,14 +34,20 @@ def get_page_data(team):
     page_list = []
     for i in search['data']:
         page_data = get_correct_page(i['id'])
-        page_tup = (page_data['name'], i['id'],  page_data['likes'], page_data['link'])
+        page_tup = (page_data['name'], i['id'],  page_data['likes'], page_data['link'], page_data['category'])
+#        if page_tup[4] == "Sports Team":
+#            page_list.append(page_tup)
         page_list.append(page_tup)
 
     official_page = max(page_list,key=lambda item:item[2])
     page_json = get_correct_page(official_page[1])
-    # TODO: format it to dict!
-    page_tuple = (page_json['name'], page_json['id'], page_json['link'], page_json['likes'], page_json['talking_about_count'], page_json['category'])
-    return page_tuple
+    page_dict = {'facebook_name' : page_json['name'],
+                 'facebook_id' : page_json['id'],
+                 'facebook_url' : page_json['link'],
+                 'facebook_likes' : page_json['likes'],
+                 'facebook_talking_about_count' : page_json['talking_about_count'],
+                 'facebook_category' : page_json['category']}
+    return page_dict
             
 def search_team(query):
     fb_graph_url = "https://graph.facebook.com/search?q=" + query + "&type=page&access_token=" + access_token
@@ -79,22 +85,22 @@ def get_page_fans(query,access_token, start_date, final_date):
             return e.reason
 
 def get_name(team):
-    return get_page_data(team)[0]
+    return get_page_data(team)['facebook_name']
     
 def get_id(team):
-    return get_page_data(team)[1]
+    return get_page_data(team)['facebook_id']
     
 def get_link(team):
-    return get_page_data(team)[2]
+    return get_page_data(team)['facebook_url']
 
 def get_likes(team):
-    return get_page_data(team)[3]
+    return get_page_data(team)['facebook_likes']
 
 def get_talking_about(team):
-    return get_page_data(team)[4]   
+    return get_page_data(team)['facebook_talking_about_count']   
     
 def get_category(team):
-    return get_page_data(team)[5]
+    return get_page_data(team)['facebook_category']
 
 # Some extra links
 
