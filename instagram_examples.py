@@ -5,7 +5,7 @@
 
 from instagram_search import *
 
-team = "újpest"
+team = "AEP Iraklis FC"
 
 team_dict = instagram_search_team(team)
 print team_dict

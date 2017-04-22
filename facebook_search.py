@@ -7,6 +7,8 @@ Created on Wed Mar 08 14:21:09 2017
 
 import urllib2
 import json
+import pandas as pd
+from django.utils.encoding import smart_str
 
 access_token = "614700401966588|7af8b0fda1b43f908b8853ed65e8b648"  # Access Token
 
@@ -39,16 +41,26 @@ def facebook_search_team(team):
 #            page_list.append(page_tup)
         page_list.append(page_tup)
 
-    official_page = max(page_list,key=lambda item:item[2])
-    page_json = get_correct_page(official_page[1])
-    page_dict = {'facebook_name' : page_json['name'],
-                 'facebook_id' : page_json['id'],
-                 'facebook_likes' : page_json['likes'],
-                 'facebook_talking_about_count' : page_json['talking_about_count'],
-                 'facebook_category' : page_json['category'],
-                 'facebook_url' : page_json['link']
-                 }
-    return page_dict
+    try:
+        official_page = max(page_list,key=lambda item:item[2])
+        page_json = get_correct_page(official_page[1])
+        page_dict = {'facebook_name' : page_json['name'],
+                     'facebook_id' : page_json['id'],
+                     'facebook_likes' : page_json['likes'],
+                     'facebook_talking_about_count' : page_json['talking_about_count'],
+                     'facebook_category' : page_json['category'],
+                     'facebook_url' : page_json['link']
+                     }
+        return page_dict
+    except:
+        page_dict = {'facebook_name' : "NaN",
+                     'facebook_id' : "NaN",
+                     'facebook_likes' : "NaN",
+                     'facebook_talking_about_count' : "NaN",
+                     'facebook_category' : "NaN",
+                     'facebook_url' : "NaN"
+                     }
+        return page_dict
             
 def search_team(query):
     fb_graph_url = "https://graph.facebook.com/search?q=" + query + "&type=page&access_token=" + access_token
@@ -102,11 +114,41 @@ def get_talking_about(team):
     
 def get_category(team):
     return facebook_search_team(team)['facebook_category']
+    
+def facebook_generate_csv(team_list):
+    output_name = team_list.replace("list","facebook_stats")
+    header = "facebook_name,facebook_id,facebook_likes,facebook_talking_about_count,facebook_category,facebook_url\n"
+    text = open(output_name, "a")
+    text.write(header)
+    text.close()
+    teams = pd.read_csv(team_list)
+    for i in range(len(teams)):
+        team = teams.iat[i,0]
+        print team
+        team_stats = facebook_search_team(team)
+        line = ""
+#        line = team + ","
+#        line = smart_str(line)
+        line += team_stats['facebook_name'] + ","
+        line += str(team_stats['facebook_id']) + ","
+        line += str(team_stats['facebook_likes']) + ","
+        line += str(team_stats['facebook_talking_about_count']) + ","
+        line += team_stats['facebook_category']
+        line += "," + team_stats['facebook_url']
+        line += "\n"
+        line = smart_str(line)
+        print line
+        text = open(output_name, "a")
+        text.write(line)
+        text.close()
 
-# Some extra links
+"""
+Some extra links
 
-#link = "https://graph.facebook.com/DiamondPlatnumz255?access_token=614700401966588|7af8b0fda1b43f908b8853ed65e8b648"
-#https://graph.facebook.com/v2.6/204153042939851/posts/?fields=message,link,permalink_url,created_time,type,name,id,comments.limit(0).summary(true),shares,likes.limit(0).summary(true),reactions.limit(0).summary(true)&limit=100&access_token=614700401966588|7af8b0fda1b43f908b8853ed65e8b648
-#https://graph.facebook.com/search?q=manchester+united&type=page&access_token=614700401966588%7C7af8b0fda1b43f908b8853ed65e8b648
-#https://graph.facebook.com/v2.6/barackobama/insights/page_fans_country/lifetime?&since=2016-06-01&until=2016-09-02&access_token=614700401966588|7af8b0fda1b43f908b8853ed65e8b648
-#https://graph.facebook.com/v2.6/7724542745/insights/page_fans_country/lifetime?&since=2016-06-01&until=2016-09-02&access_token=614700401966588|7af8b0fda1b43f908b8853ed65e8b648
+link = "https://graph.facebook.com/DiamondPlatnumz255?access_token=614700401966588|7af8b0fda1b43f908b8853ed65e8b648"
+https://graph.facebook.com/v2.6/204153042939851/posts/?fields=message,link,permalink_url,created_time,type,name,id,comments.limit(0).summary(true),shares,likes.limit(0).summary(true),reactions.limit(0).summary(true)&limit=100&access_token=614700401966588|7af8b0fda1b43f908b8853ed65e8b648
+https://graph.facebook.com/search?q=manchester+united&type=page&access_token=614700401966588%7C7af8b0fda1b43f908b8853ed65e8b648
+https://graph.facebook.com/v2.6/barackobama/insights/page_fans_country/lifetime?&since=2016-06-01&until=2016-09-02&access_token=614700401966588|7af8b0fda1b43f908b8853ed65e8b648
+https://graph.facebook.com/v2.6/7724542745/insights/page_fans_country/lifetime?&since=2016-06-01&until=2016-09-02&access_token=614700401966588|7af8b0fda1b43f908b8853ed65e8b648
+
+"""

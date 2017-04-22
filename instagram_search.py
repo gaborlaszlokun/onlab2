@@ -48,7 +48,7 @@ def get_instagram_media(team):
     return result['instagram_media']
        
 def get_instagram_followers(team):
-    result = search_team(team)
+    result = instagram_search_team(team)
     return result['instagram_followers']
     
 def get_instagram_follows(team):

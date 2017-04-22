@@ -40,7 +40,14 @@ def twitter_search_team(team):
                      }
         return page_dict
     else:
-        return ("NaN", "NaN", "NaN", "NaN", "NaN", "NaN")
+        page_dict = {'twitter_name' : "NaN",
+                     'twitter_id' : "NaN",
+                     'twitter_followers' : "NaN",
+                     'twitter_created_at' : "NaN",
+                     'twitter_statuses' : "NaN",
+                     'twitter_url' : "NaN"
+                     }
+        return page_dict
  
 def get_twitter_name(team):
     results = twitter_search_team(team)

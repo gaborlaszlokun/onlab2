@@ -5,7 +5,7 @@
 
 from twitter_search import *
 
-team = "honvéd fc"
+team = "AEP Iraklis FC"
 
 team_dict = twitter_search_team(team)
 print team_dict
