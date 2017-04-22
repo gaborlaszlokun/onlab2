@@ -44,12 +44,12 @@ def facebook_search_team(team):
     try:
         official_page = max(page_list,key=lambda item:item[2])
         page_json = get_correct_page(official_page[1])
-        page_dict = {'facebook_name' : page_json['name'],
+        page_dict = {'facebook_name' : page_json['name'].replace(",",";"),
                      'facebook_id' : page_json['id'],
                      'facebook_likes' : page_json['likes'],
                      'facebook_talking_about_count' : page_json['talking_about_count'],
-                     'facebook_category' : page_json['category'],
-                     'facebook_url' : page_json['link']
+                     'facebook_category' : page_json['category'].replace(",",";"),
+                     'facebook_url' : page_json['link'].replace(",",";")
                      }
         return page_dict
     except:
@@ -141,6 +141,10 @@ def facebook_generate_csv(team_list):
         text = open(output_name, "a")
         text.write(line)
         text.close()
+
+def update_likes(input_csv):
+    #TODO: regenerate the like 
+    None
 
 """
 Some extra links

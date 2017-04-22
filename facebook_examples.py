@@ -5,9 +5,10 @@
 
 from facebook_search import *
 
-#team = "rapid wien"
+team = "arsenal"
  
-#print facebook_search_team(team)
+for i  in facebook_search_team(team):
+    print i
 
-filename = "main_teams_list.csv"
-facebook_generate_csv(filename)
+#filename = "main_teams_list.csv"
+#facebook_generate_csv(filename)
