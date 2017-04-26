@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Mar 08 14:21:09 2017
-
 @author: ASUS
 """
 
@@ -114,7 +112,7 @@ def get_facebook_talking_about(team_name):
 def get_facebook_category(team_name):
     return facebook_search_team(team_name)['facebook_category']
     
-def facebook_generate_csv(team_list):
+def generate_facebook_csv(team_list):
     output_name = team_list.replace("list","facebook_stats")
     csv_header = "facebook_name,facebook_id,facebook_likes,facebook_talking_about_count,facebook_category,facebook_url\n"
     result_csv = open(output_name, "a")

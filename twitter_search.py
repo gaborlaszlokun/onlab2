@@ -8,20 +8,20 @@ from spec_char_remover import remove_spec
 import time
 import urllib2
 
-def set_api(): 
+def set_twitter_api(): 
     config = {}
     execfile("twitter_config.py", config)
     api = Twitter(auth = OAuth(config["access_key"], config["access_secret"], config["consumer_key"], config["consumer_secret"]))
     return api
         
-def twitter_search_team(team):
+def twitter_search_team(team_name):
     # create twitter API object
-    twitter = set_api()
-    team = remove_spec(team)
-    results = twitter.users.search(q = '"' + team + '"')
+    twitter = set_twitter_api()
+    team_name = remove_spec(team_name)
+    search_result = twitter.users.search(q = '"' + team_name + '"')
     
-    if len(results) > 0:
-        user = results[0]
+    if len(search_result) > 0:
+        user = search_result[0]
         # Expand the urls
         try:
             tco_url = user["url"]
@@ -49,26 +49,29 @@ def twitter_search_team(team):
                      }
         return page_dict
  
-def get_twitter_name(team):
-    results = twitter_search_team(team)
-    return results['twitter_name']
+def get_twitter_name(team_name):
+    search_result = twitter_search_team(team_name)
+    return search_result['twitter_name']
     
-def get_twitter_id(team):
-    results = twitter_search_team(team)
-    return results['twitter_id']
+def get_twitter_id(team_name):
+    search_result = twitter_search_team(team_name)
+    return search_result['twitter_id']
     
-def get_twitter_followers(team):
-    results = twitter_search_team(team)
-    return results['twitter_followers']
+def get_twitter_followers(team_name):
+    search_result = twitter_search_team(team_name)
+    return search_result['twitter_followers']
     
-def get_twitter_created_at(team):
-    results = twitter_search_team(team)
-    return results['twitter_created_at']
+def get_twitter_created_at(team_name):
+    search_result = twitter_search_team(team_name)
+    return search_result['twitter_created_at']
     
-def get_twitter_statuses(team):
-    results = twitter_search_team(team)
-    return results['twitter_statuses']
+def get_twitter_statuses(team_name):
+    search_result = twitter_search_team(team_name)
+    return search_result['twitter_statuses']
        
-def get_twitter_url(team):
-    results = twitter_search_team(team)
-    return results['twitter_url']
+def get_twitter_url(team_name):
+    search_result = twitter_search_team(team_name)
+    return search_result['twitter_url']
+
+def generate_twitter_csv(team_list):
+    raise NotImplementedError
