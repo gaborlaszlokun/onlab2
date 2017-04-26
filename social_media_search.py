@@ -15,4 +15,5 @@ def social_media_search(team):
 def print_result(team):
     for key, value in social_media_search(team).iteritems():
         print key, ":", value
+        
     

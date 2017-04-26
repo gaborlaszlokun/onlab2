@@ -18,3 +18,4 @@ teams = pd.read_csv("main_teams_list.csv")
 for i in range(len(teams)):
     team = teams.iat[i,0]
     print_result(team)
+    

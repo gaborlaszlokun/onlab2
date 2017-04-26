@@ -11,7 +11,7 @@ from facebook_config import *
 
 access_token = get_facebook_access_token()
 
-def get_correct_page(page_id):
+def get_page_from_id(page_id):
     api_endpoint = "https://graph.facebook.com/v2.4/"
     fb_graph_url = api_endpoint + page_id + "?fields=id,name,likes,link,talking_about_count,category&access_token=" + access_token
     try:
@@ -31,16 +31,16 @@ def get_correct_page(page_id):
 
 def facebook_search_team(team_name):
     team_name = team_name.replace(" ","%20")
-    search_result = search_team(team_name)
+    search_result = get_search_result_list(team_name)
     page_list = []
-    for i in search_result['data']:
-        page_data = get_correct_page(i['id'])
+    for i in search_result:
+        page_data = get_page_from_id(i['id'])
         page_tuple = (page_data['name'], i['id'],  page_data['likes'], page_data['link'], page_data['category'])
         page_list.append(page_tuple)
 
     try:
         official_page = max(page_list,key=lambda item:item[2])
-        page_json = get_correct_page(official_page[1])
+        page_json = get_page_from_id(official_page[1])
         page_dict = {'facebook_name' : page_json['name'].replace(",",";"),
                      'facebook_id' : page_json['id'],
                      'facebook_likes' : page_json['likes'],
@@ -59,14 +59,14 @@ def facebook_search_team(team_name):
                      }
         return page_dict
             
-def search_team(query):
-    fb_graph_url = "https://graph.facebook.com/search?q=" + query + "&type=page&access_token=" + access_token
+def get_search_result_list(team_name):
+    fb_graph_url = "https://graph.facebook.com/search?q=" + team_name + "&type=page&access_token=" + access_token
     try:
         api_request = urllib2.Request(fb_graph_url)
         api_response = urllib2.urlopen(api_request)
         
         try:
-            return json.loads(api_response.read())
+            return json.loads(api_response.read())['data']
         except (ValueError, KeyError, TypeError):
             return "JSON error"
 
