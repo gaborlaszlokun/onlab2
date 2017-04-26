@@ -5,10 +5,11 @@
 
 from facebook_search import *
 
-team = "arsenal"
+team = "fcbarcelona"
  
-for i  in facebook_search_team(team):
-    print i
+    
+for key, value in facebook_search_team(team).iteritems():
+        print key, ":", value
 
 #filename = "main_teams_list.csv"
 #facebook_generate_csv(filename)
