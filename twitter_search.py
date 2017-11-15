@@ -6,12 +6,15 @@
 from twitter import *
 from spec_char_remover import remove_spec
 import time
-import urllib2
+from urllib.request import urlopen
 
 def set_twitter_api(): 
-    config = {}
-    execfile("twitter_config.py", config)
-    api = Twitter(auth = OAuth(config["access_key"], config["access_secret"], config["consumer_key"], config["consumer_secret"]))
+
+    consumer_key = 'lkNdx5veeHfkGddtdnmvcej2z'
+    consumer_secret = 'DJ7UzhKJAocdOOhwLOEB9OpjEgwgwOeJZstjm8RERLYa6sSNWi'
+    access_key = '3874598667-VFtiu01zBsy7UZMFSZLM6iZNbztW6K6cAyliR5j'
+    access_secret = 'oNzEwXqRC91tRDJccl5fH6CxkqJoAlKthNLRwlBHjVAGT'
+    api = Twitter(auth = OAuth(access_key, access_secret, consumer_key, consumer_secret))
     return api
         
 def twitter_search_team(team_name):
@@ -25,7 +28,7 @@ def twitter_search_team(team_name):
         # Expand the urls
         try:
             tco_url = user["url"]
-            req = urllib2.urlopen(tco_url)
+            req = urlopen(tco_url)
             url = req.url
         except:
             url = "NaN"

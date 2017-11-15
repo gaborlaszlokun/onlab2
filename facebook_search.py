@@ -3,11 +3,12 @@
 @author: ASUS
 """
 
-import urllib2
+from urllib.request import urlopen, Request
 import json
 import pandas as pd
 from django.utils.encoding import smart_str
 from facebook_config import *
+from spec_char_remover import remove_spec
 
 access_token = get_facebook_access_token()
 
@@ -15,22 +16,25 @@ def get_page_from_id(page_id):
     api_endpoint = "https://graph.facebook.com/v2.4/"
     fb_graph_url = api_endpoint + page_id + "?fields=id,name,likes,link,talking_about_count,category&access_token=" + access_token
     try:
-        api_request = urllib2.Request(fb_graph_url)
-        api_response = urllib2.urlopen(api_request)
+        api_request = Request(fb_graph_url)
+        api_response = urlopen(api_request)
         
         try:
             return json.loads(api_response.read())
         except (ValueError, KeyError, TypeError):
             return "JSON error"
 
-    except IOError, e:
-        if hasattr(e, 'code'):
-            return e.code
-        elif hasattr(e, 'reason'):
-            return e.reason
+    except (IOError):
+        None
+#    except (IOError, e):
+#        if hasattr(e, 'code'):
+#            return e.code
+#        elif hasattr(e, 'reason'):
+#            return e.reason
 
 def facebook_search_team(team_name):
     team_name = team_name.replace(" ","%20")
+    team_name = remove_spec(team_name)
     search_result = get_search_result_list(team_name)
     page_list = []
     for i in search_result:
@@ -62,37 +66,40 @@ def facebook_search_team(team_name):
 def get_search_result_list(team_name):
     fb_graph_url = "https://graph.facebook.com/search?q=" + team_name + "&type=page&access_token=" + access_token
     try:
-        api_request = urllib2.Request(fb_graph_url)
-        api_response = urllib2.urlopen(api_request)
+        api_request = Request(fb_graph_url)
+        api_response = urlopen(api_request)
         
         try:
             return json.loads(api_response.read())['data']
         except (ValueError, KeyError, TypeError):
             return "JSON error"
-
-    except IOError, e:
-        if hasattr(e, 'code'):
-            return e.code
-        elif hasattr(e, 'reason'):
-            return e.reason
+    except (IOError):
+        None
+#    except (IOError, e):
+#        if hasattr(e, 'code'):
+#            return e.code
+#        elif hasattr(e, 'reason'):
+#            return e.reason
 
 def get_facebook_page_fans(query,access_token, start_date, final_date):
     fb_graph_url = "https://graph.facebook.com/v2.6/" + query + "/insights/page_fans_country/lifetime?&since=" + start_date + "&until=" + final_date + "&access_token=" + access_token
 
     try:
-        api_request = urllib2.Request(fb_graph_url)
-        api_response = urllib2.urlopen(api_request)
+        api_request = Request(fb_graph_url)
+        api_response = urlopen(api_request)
         
         try:
             return json.loads(api_response.read())
         except (ValueError, KeyError, TypeError):
             return "JSON error"
 
-    except IOError, e:
-        if hasattr(e, 'code'):
-            return e.code
-        elif hasattr(e, 'reason'):
-            return e.reason
+    except (IOError):
+        None
+#    except (IOError, e):
+#        if hasattr(e, 'code'):
+#            return e.code
+#        elif hasattr(e, 'reason'):
+#            return e.reason
 
 def get_facebook_name(team_name):
     return facebook_search_team(team_name)['facebook_name']
@@ -111,7 +118,8 @@ def get_facebook_talking_about(team_name):
     
 def get_facebook_category(team_name):
     return facebook_search_team(team_name)['facebook_category']
-    
+  
+#TODO: refactor
 def generate_facebook_csv(team_list):
     output_name = team_list.replace("list","facebook_stats")
     csv_header = "facebook_name,facebook_id,facebook_likes,facebook_talking_about_count,facebook_category,facebook_url\n"
@@ -121,7 +129,7 @@ def generate_facebook_csv(team_list):
     teams = pd.read_csv(team_list)
     for i in range(len(teams)):
         team_name = teams.iat[i,0]
-        print team_name
+        print (team_name)
         team_stats = facebook_search_team(team_name)
         result_line = ""
 #        result_line = team_name + ","
@@ -134,7 +142,7 @@ def generate_facebook_csv(team_list):
         result_line += "," + team_stats['facebook_url']
         result_line += "\n"
         result_line = smart_str(result_line)
-        print result_line
+        print (result_line)
         
         result_csv = open(output_name, "a")
         result_csv.write(result_line)

@@ -5,14 +5,14 @@
 
 from instagram_search import *
 
-team = "AEP Iraklis FC"
+team = "real madrid"
 
-team_dict = instagram_search_team(team)
-print team_dict
+for key, value in instagram_search_team(team_name).items():
+    print (key, ":", value)
  
-print get_instagram_name(team)
-print get_instagram_id(team)
-print get_instagram_media(team)
-print get_instagram_followers(team)
-print get_instagram_follows(team)
-print get_instagram_url(team)
+#print (get_instagram_name(team))
+#print (get_instagram_id(team))
+#print (get_instagram_media(team))
+#print (get_instagram_followers(team))
+#print (get_instagram_follows(team))
+#print (get_instagram_url(team))
