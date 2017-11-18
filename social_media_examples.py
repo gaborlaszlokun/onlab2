@@ -6,7 +6,7 @@
 from social_media_search import  *
 import pandas as pd
 
-team = "real madrid"
+#team = "udlaspalmasoficial"
 
 #print(social_media_search(team))
 
@@ -18,27 +18,37 @@ team = "real madrid"
    
 #print_result(team)
 
-columns = ['query', 'facebook_name', 'facebook_id', 'twitter_name', 'twitter_id', 'instagram_name', 'instagram_id']
+
+
+
+
+teams = pd.read_csv("main_teams.csv")
+
+#for i in range(len(teams)):
+#    team = teams.iat[i,0]
+#    main_print(team)
+
+
+columns = ['query', 'facebook_likes', 'twitter_followers', 'instagram_followers']
 main_teams_df = pd.DataFrame(columns=columns)
 index = 0
-
-teams = pd.read_csv("main_teams_list.csv")
-
 for i in range(len(teams)):
-    team = teams.iat[i,0]
+    team = teams.loc[i,'query']
+    team_alts = (teams.loc[i,'facebook_name'],teams.loc[i,'twitter_name'],teams.loc[i,'instagram_name'])
+    print (team_alts)
+    result = social_media_search(team_alts)
+#    print (result)
+    facebook_likes = result['facebook_likes']
+    twitter_followers = result['twitter_followers']
+    instagram_followers = result['instagram_followers']
+
     
-    result = social_media_search(team)
-    print (result)
-    facebook_name = result['facebook_name']
-    facebook_id = result['facebook_id']
-    twitter_name = result['twitter_name'] 
-    twitter_id = result['twitter_id']
-    instagram_name = result['instagram_name']
-    instagram_id = result['instagram_id']
-    
-    main_teams_line = pd.DataFrame([[team,facebook_name, facebook_id, twitter_name, twitter_id, instagram_name, instagram_id]], columns=columns, index = [index])
+    main_teams_line = pd.DataFrame([[team,facebook_likes, twitter_followers, instagram_followers]], columns=columns, index = [index])
     index += 1
     main_teams_df = main_teams_df.append(main_teams_line)
+    main_teams_df.to_csv("main_teams_meas.csv", sep=',', encoding='utf-8', index=False) 
     
-main_teams_df.to_csv("main_teams.csv", sep=',', encoding='utf-8', index=False)
-    
+
+teams_meas = pd.read_csv("main_teams_meas.csv")
+
+for i in range(len(teams_meas)):

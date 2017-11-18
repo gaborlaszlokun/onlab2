@@ -7,11 +7,11 @@ from facebook_search import *
 from instagram_search import *
 from twitter_search import *
 
-def social_media_search(team):
+def social_media_search(team_alts):
 
-    team_dict = instagram_search_team(team) 
-    team_dict.update(twitter_search_team(team))
-    team_dict.update(facebook_search_team(team))
+    team_dict = facebook_search_team(team_alts[0])
+    team_dict.update(twitter_search_team(team_alts[1]))
+    team_dict.update(instagram_search_team(team_alts[2]))
 
     return team_dict
     
@@ -22,12 +22,10 @@ def print_result(team):
         
 def main_print(team):
     print(team)
-    print(social_media_search(team)['instagram_name'])
-    print (social_media_search(team)['instagram_id'])
-    print(social_media_search(team)['facebook_name'])
-    print (social_media_search(team)['facebook_id'])
-    print(social_media_search(team)['twitter_name'])
-    print (social_media_search(team)['twitter_id'])
+    print(social_media_search(team)['facebook_likes'])
+    print(social_media_search(team)['instagram_followers'])
+    print(social_media_search(team)['twitter_followers'])
     print()
     
-    
+def save_main_teams(team):
+    raise NotImplementedError

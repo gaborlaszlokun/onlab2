@@ -5,9 +5,9 @@
 
 from instagram_search import *
 
-team = "real madrid"
+team = "acmilan"
 
-for key, value in instagram_search_team(team_name).items():
+for key, value in instagram_search_team(team).items():
     print (key, ":", value)
  
 #print (get_instagram_name(team))
