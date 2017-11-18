@@ -1,35 +1,35 @@
 query,facebook_name,facebook_id,twitter_name,twitter_id,instagram_name,instagram_id
-1. FC Köln,1. FC Köln,107902162570637,1FCKolnDaily,1121024947,fckoeln,46628942
+1. FC Köln,1. FC Köln,107902162570637,fckoeln,130541498,fckoeln,46628942
 1. FSV Mainz 05,1. FSV Mainz 05,149265181761871,1FSVMainz05,48323591,1fsvmainz05,372025263
-1899 Hoffenheim,TSG 1899 Hoffenheim,113849728640999,achtzehn99,61477513,hoffenheim_1899,1821338746
+1899 Hoffenheim,TSG 1899 Hoffenheim,113849728640999,achtzehn99,61477513,tsg1899hoffenheim,1723460610
 AC Milan,A.C. Milan,147054831936,acmilan,186386857,acmilan,224658467
 ACF Fiorentina,ACF Fiorentina,334348116596391,acffiorentina,54857969,acffiorentina,20693711
 AFC Bournemouth,AFC Bournemouth,246692125365496,afcbournemouth,20880206,officialafcb,424085081
 AS Monaco,AS MONACO,280398141992271,AS_Monaco,558572709,asmonaco,284182255
-AS Nancy,ASNL- AS Nancy Lorraine,228876913156,asnlofficiel,539795600,asnlinside,2991001455
+AS Nancy,ASNL- AS Nancy Lorraine,228876913156,asnlofficiel,539795600,asnancylorraine,510091641
 AS Roma,AS Roma,209630315764457,OfficialASRoma,380570951,officialasroma,1428837659
 AS Saint-Étienne,ASSE - Association Sportive de Saint-Etienne,136053823071441,ASSEofficiel,238179126,asseofficiel,244054340
 Angers SCO,Angers SCO,17900277715,AngersSCO,318695478,angers_sco,55363763
 Arsenal FC,Arsenal,20669912712,Arsenal,34613288,arsenalfc_official,308843529
 Atalanta,Atalanta Bergamasca Calcio,243735958984792,Atalanta_BC,338995273,atalantabc,372022136
-Athletic Bilbao,Athletic Bilbao,112519538761016,AthleticBilbao,20342284,athleticbilbao,301499087
+Athletic Bilbao,Athletic Bilbao,112519538761016,AthleticBilbao,20342284,athleticclub,1270192248
 Atlético Madrid,Atlético de Madrid,310044472388,Atletico_Madrid,71761827,atleticodemadrid,220455014
 Bayer Leverkusen,Bayer 04 Leverkusen,136080986433184,bayer04fussball,180720589,bayer04fussball/,327046939
-Bayern München,FC Bayern München,822633781141031,FCBayer,773069256,fcbayern,378496191
+Bayern München,FC Bayern München,822633781141031,FCBayern,773069256,fcbayern,773069256
 Bologna FC,Bologna Fc 1909,249463021839185,BfcOfficialPage,634434718,bfc1909_official,1505985759
 Bor. Mönchengladbach,borussia.global,1432189737069186,borussia,80790735,borussia,1412603783
 Borussia Dortmund,Borussia Dortmund,134904013188254,BVB,165699676,bvb09,604588667
-Burnley FC,Burnley F.C.,112524268761444,BurnleyOfficial,441309926,burnley._.fc,6086920213
+Burnley FC,Burnley F.C.,112524268761444,BurnleyOfficial,441309926,burnleyofficial,1426212856
 CA Osasuna,C.A OSASUNA,24354184839,CAOsasuna,177890401,caosasuna,509342383
 CD Alavés,deportivoalaves,187766727949541,Alaves,186055984,deportivoalaves,1551899082
-CD Leganés,CDLeganes.com.es,108906722865153,CDLeganes,170290937,cdleganes,488017278
+CD Leganés,ClubDeportivoLeganes,525379844169383,CDLeganes,170290937,cdleganes,488017278
 Cagliari Calcio,Cagliari Calcio,111299312217338,CagliariCalcio,712132014,cagliaricalcio,332490613
 Celta Vigo,rccelta,120185216968,RCCelta,267975373,realclubcelta,2157777496
 Chelsea FC,Chelsea Football Club,86037497258,ChelseaFC,22910295,chelseafc,244309106
 Chievo Verona,A.C.ChievoVerona,134099459953294,ACChievoVerona,161604690,acchievoverona,21916245
 Crystal Palace,Crystal Palace Football Club,168089120761,CPFC,85307509,cpfc,361302639
 Deportivo La Coruña,Real Club Deportivo de La Coruña,128412400518120,RCDeportivo,150581068,rcdeportivo,1753208541
-Dijon FCO,Dijon FCO,108252249205418,DFCO_Officiel,84288520,dijonfco,1918998066
+Dijon FCO,DFCO.Officiel,135517474210,DFCO_Officiel,84288520,dfco_officiel,1595398193
 EA Guingamp,enavantdeguingamp,140606675990988,EAGuingamp,351069799,eaguingamp,1959102961
 Eintracht Frankfurt,Eintracht Frankfurt,996959130390687,Eintracht,120127817,eintrachtfrankfurt,424094009
 Empoli FC,Empoli Fc Official,1441551352798710,EmpoliCalcio,2650674570,empoli_fc_official,1428564054
@@ -42,7 +42,7 @@ FC Ingolstadt 04,FC Ingolstadt 04,201239353064,Schanzer,86272639,dieschanzer,201
 FC Lorient,FC Lorient,129677837090824,FCLorient,338891581,fclorient,437821172
 FC Metz,FC Metz,189000507857,FCMetz,596230054,fcmetz,365402172
 FC Nantes,FC Nantes,246075005477935,FCNantes,804263442,fcnantes,1249132728
-FC Schalke 04,FC Schalke 04,785051031526187,s04_en,2483668285,s04,456497772
+FC Schalke 04,FC Schalke 04,785051031526187,s04,296163037,s04,456497772
 Genoa CFC,Genoa CFC,155465667797695,GenoaCFC,319086477,genoacfcofficial,1558247293
 Girondins Bordeaux,FC Girondins de Bordeaux,130890383602119,girondins,154586685,girondins,728672449
 Granada CF,Granada CF,191397207587097,GranadaCdeF,188263011,granadacf,1485747183
@@ -53,19 +53,19 @@ Inter,Inter,139132459470235,Inter,124450567,inter,627042080
 Juventus,Juventus,171522852874952,juventusfcen,1638021792,juventus,194317179
 Lazio Roma,SSLazioOfficialPage,137861922991302,OfficialSSLazio,424354829,official_sslazio,516030401
 Leicester City,Leicester City Football Club,324520502768,LCFC,122392884,lcfc,311256838
-Lille OSC,Lille OSC,112499452095137,FF_LOSC,232143631,lillefc,1968712665
+Lille OSC,Losc,137846509616746,losclive,288804720,losclive,205378557
 Liverpool FC,Liverpool FC,67920382572,LFC,19583545,liverpoolfc,187102427
 Manchester City,Manchester City,208411345454,ManCity,14573900,mancity,5880761
 Manchester United,Manchester United,7724542745,ManUtd,558797310,manchesterunited,491527077
-Middlesbrough FC,Middlesbrough FC,386636354690970,Boro,370631455,middlesbroughfc,4345529249
-Montpellier HSC,Montpellier HSC,103134349726161,MontpellierHSC,125332632,montpellierhsc_99,1493042861
+Middlesbrough FC,Middlesbrough FC,386636354690970,Boro,370631455,theboroofficial,1415533942
+Montpellier HSC,MHSC,108559765783,MontpellierHSC,125332632,mhscofficiel,547417677
 Málaga CF,Málaga CF,116654715047032,MalagaCF,48961075,malagacf,2283262112
 OGC Nice,OGC Nice,102714646451500,ogcnice,329683737,ogcnice,39498051
-Olympique Lyon,Olympique Lyonnais - OL,250938593971,OL__1950,1095081139,ol,14668706
+Olympique Lyon,Olympique Lyonnais - OL,250938593971,OL,33893706,ol,14668706
 Olympique Marseille,Olympique de Marseille,1894151597502757,OM_Officiel,40448264,olympiquemarseille,2247317303
 Paris Saint-Germain,PSG - Paris Saint-Germain,139594698297,PSG_inside,38164846,psg,232024162
 Pescara Calcio,Pescara Calcio,230864470334776,PescaraCalcio,482317995,pescaracalcio1936,1465604573
-RB Leipzig,RB Leipzig,260024704433346,DieRotenBullen,324992991,rb.leipzig,1459398840
+RB Leipzig,RB Leipzig,260024704433346,DieRotenBullen,324992991,dierotenbullen,1267262206
 Real Betis,Real Betis Balompié,171931856195395,RealBetis,296756458,realbetisbalompie,38449316
 Real Madrid,Real Madrid C.F.,19034719952,realmadrid,14872237,realmadrid,290023231
 Real Sociedad,Real Sociedad de Fútbol,302193069794158,RealSociedadEN,2696177462,realsociedad,1649662308
@@ -74,7 +74,7 @@ SC Freiburg,SC Freiburg,171700106213736,scfreiburg,41323269,scfreiburg,341668765
 SD Eibar,SD Eibar,29975688107,SDEibar,442869924,sdeibar,1776612072
 SM Caen,SMC | Stade Malherbe Caen,237927042913045,SMCaen,991071265,smcaen,1962207914
 SSC Napoli,SSC Napoli,114983868535196,sscnapoli,454873450,officialsscnapoli,460993888
-SV Darmstadt 98,SV Darmstadt 98,112455528770296,sv98,21283319,svdarmstadt98,362168468
+SV Darmstadt 98,SVDarmstadt1898eV,102951283096015,sv98,21283319,svdarmstadt1898,1666667145
 Sampdoria,U.C. Sampdoria,203121013117037,sampdoria,491355440,unionecalciosampdoria,449081061
 Sassuolo Calcio,U.S. Sassuolo,204365122920646,SassuoloUS,494931397,sassuolocalcio,265407157
 Sevilla FC,Sevilla FC,478313642333770,SevillaFC_ENG,2941994339,sevillafc,2916795
@@ -83,7 +83,7 @@ Sporting Gijón,Real Sporting de Gijón,257285550951760,Sporting_Gijon,70416545,
 Stade Rennais,staderennais,8023141388,staderennais,20447193,staderennaisfc,217949117
 Stoke City,Stoke City Football Club,28928779637,stokecity,44335177,stokecity,182972429
 Sunderland AFC,Sunderland AFC,118389841508479,SunderlandAFC,27844464,sunderlandafcofficial,272695414
-Swansea City,Swansea City Football Club,87328379939,Swanseacity_esp,1617426384,swansofficial,436376966
+Swansea City,Swansea City Football Club,87328379939,SwansOfficial,472385266,swansofficial,436376966
 Torino FC,Torino F.C.,16002319067,TorinoFC_1906,539085035,torinofc.fanpage,1902147371
 Tottenham Hotspur,Tottenham Hotspur,351687753504,SpursOfficial,121402638,spursofficial,253098573
 Toulouse FC,Toulouse Football Club,73016258999,ToulouseFC,47902100,toulousefc,207549692

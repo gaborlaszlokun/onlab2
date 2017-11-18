@@ -19,7 +19,19 @@ def instagram_search_team(query):
     user_name = remove_spec(query)
     try:
         search_result = api.user_search(q=user_name)
-        user = api.user(search_result[0].id)
+        page_list = []
+        for i in range(len(search_result)):
+            try:
+                user = api.user(search_result[i].id)
+#                print (user.counts['followed_by'])
+                page_tuple = (user, user.counts['followed_by'])
+                page_list.append(page_tuple)
+            except:
+                None
+
+        user = max(page_list,key=lambda item:item[1])[0]
+        
+#        user = api.user(search_result[0].id)
         page_dict = {'instagram_name' : user.username,
                      'instagram_id': user.id,
                      'instagram_media': user.counts['media'],

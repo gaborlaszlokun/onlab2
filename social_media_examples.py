@@ -18,16 +18,8 @@ import pandas as pd
    
 #print_result(team)
 
-
-
-
-
+"""
 teams = pd.read_csv("main_teams.csv")
-
-#for i in range(len(teams)):
-#    team = teams.iat[i,0]
-#    main_print(team)
-
 
 columns = ['query', 'facebook_likes', 'twitter_followers', 'instagram_followers']
 main_teams_df = pd.DataFrame(columns=columns)
@@ -49,6 +41,11 @@ for i in range(len(teams)):
     main_teams_df.to_csv("main_teams_meas.csv", sep=',', encoding='utf-8', index=False) 
     
 
+
+"""
 teams_meas = pd.read_csv("main_teams_meas.csv")
 
 for i in range(len(teams_meas)):
+    if teams_meas.loc[i,'facebook_likes'] < 10000 or teams_meas.loc[i,'twitter_followers'] < 10000 or teams_meas.loc[i,'instagram_followers'] < 10000:
+        print (teams_meas.loc[i,'query'],teams_meas.loc[i,'facebook_likes'], teams_meas.loc[i,'twitter_followers'], teams_meas.loc[i,'instagram_followers'])
+        

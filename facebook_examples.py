@@ -5,7 +5,7 @@
 
 from facebook_search import *
 
-team = "real madrid"
+team = "Losc"
  
     
 for key, value in facebook_search_team(team).items():
