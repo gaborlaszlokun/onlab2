@@ -6,12 +6,12 @@
 from social_media_search import  *
 import pandas as pd
 
-#team = "udlaspalmasoficial"
+team = "ferencvárosi tc"
 
 #print(social_media_search(team))
 
-#for key, value in social_media_search(team).items():
-#    print (key, ":", value)
+for key, value in social_media_search(team).items():
+    print (key, ":", value)
 
 #social_media_search(team)['instagram_name']
 #social_media_search(team)['instagram_id']
@@ -42,10 +42,10 @@ for i in range(len(teams)):
     
 
 
-"""
 teams_meas = pd.read_csv("main_teams_meas.csv")
 
 for i in range(len(teams_meas)):
     if teams_meas.loc[i,'facebook_likes'] < 10000 or teams_meas.loc[i,'twitter_followers'] < 10000 or teams_meas.loc[i,'instagram_followers'] < 10000:
         print (teams_meas.loc[i,'query'],teams_meas.loc[i,'facebook_likes'], teams_meas.loc[i,'twitter_followers'], teams_meas.loc[i,'instagram_followers'])
-        
+
+"""     
