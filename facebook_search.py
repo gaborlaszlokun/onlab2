@@ -26,11 +26,6 @@ def get_page_from_id(page_id):
 
     except (IOError):
         None
-#    except (IOError, e):
-#        if hasattr(e, 'code'):
-#            return e.code
-#        elif hasattr(e, 'reason'):
-#            return e.reason
 
 def facebook_search_team(team_name):
     team_name = team_name.replace(" ","%20")
@@ -75,11 +70,6 @@ def get_search_result_list(team_name):
             return "JSON error"
     except (IOError):
         None
-#    except (IOError, e):
-#        if hasattr(e, 'code'):
-#            return e.code
-#        elif hasattr(e, 'reason'):
-#            return e.reason
 
 def get_facebook_page_fans(query,access_token, start_date, final_date):
     fb_graph_url = "https://graph.facebook.com/v2.6/" + query + "/insights/page_fans_country/lifetime?&since=" + start_date + "&until=" + final_date + "&access_token=" + access_token
@@ -95,29 +85,6 @@ def get_facebook_page_fans(query,access_token, start_date, final_date):
 
     except (IOError):
         None
-#    except (IOError, e):
-#        if hasattr(e, 'code'):
-#            return e.code
-#        elif hasattr(e, 'reason'):
-#            return e.reason
-
-def get_facebook_name(team_name):
-    return facebook_search_team(team_name)['facebook_name']
-    
-def get_facebook_id(team_name):
-    return facebook_search_team(team_name)['facebook_id']
-    
-def get_facebook_link(team_name):
-    return facebook_search_team(team_name)['facebook_url']
-
-def get_facebook_likes(team_name):
-    return facebook_search_team(team_name)['facebook_likes']
-
-def get_facebook_talking_about(team_name):
-    return facebook_search_team(team_name)['facebook_talking_about_count']   
-    
-def get_facebook_category(team_name):
-    return facebook_search_team(team_name)['facebook_category']
   
 #TODO: refactor
 def generate_facebook_csv(team_list):

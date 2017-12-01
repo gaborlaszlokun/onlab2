@@ -14,14 +14,27 @@ c = conn.cursor()
 # Create table
 try:
     c.execute('''CREATE TABLE main_teams
-             (team_name text primary key, facebook_id real, twitter_id, instagram_id real)''')
+             (team_name text primary key, facebook_name text, twitter_name text, instagram_name text)''')
 except:
     None
 
 
 main_teams = pd.read_csv('main_teams.csv')
 
+teams = []
 for i in range(len(main_teams)):
-    print(main_teams.loc[i,'query'],"|", main_teams.loc[i,'instagram_id'],"|", main_teams.loc[i,'instagram_name'])
+    
+    team_tuple = ((main_teams.loc[i,'query'], main_teams.loc[i,'facebook_name'], main_teams.loc[i,'twitter_name'] , main_teams.loc[i,'instagram_name']))
+    teams.append(team_tuple)
+#print (teams)
+try:
+    c.executemany('INSERT INTO main_teams VALUES (?,?,?,?)', teams)
+    # Save (commit) the changes
+    conn.commit()
+except:
+    None
+    
+c.execute('SELECT * FROM main_teams')
+print(c.fetchall())
 
-#print(mdain_teams)
+conn.close()  

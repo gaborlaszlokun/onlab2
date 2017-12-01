@@ -5,7 +5,7 @@
 
 from twitter_search import *
 
-team_name = "1638021792"
+team_name = "manchester united"
 
 for key, value in twitter_search_team(team_name).items():
     print (key, ":", value)

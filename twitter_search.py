@@ -51,30 +51,6 @@ def twitter_search_team(team_name):
                      'twitter_url' : "NaN"
                      }
         return page_dict
- 
-def get_twitter_name(team_name):
-    search_result = twitter_search_team(team_name)
-    return search_result['twitter_name']
-    
-def get_twitter_id(team_name):
-    search_result = twitter_search_team(team_name)
-    return search_result['twitter_id']
-    
-def get_twitter_followers(team_name):
-    search_result = twitter_search_team(team_name)
-    return search_result['twitter_followers']
-    
-def get_twitter_created_at(team_name):
-    search_result = twitter_search_team(team_name)
-    return search_result['twitter_created_at']
-    
-def get_twitter_statuses(team_name):
-    search_result = twitter_search_team(team_name)
-    return search_result['twitter_statuses']
-       
-def get_twitter_url(team_name):
-    search_result = twitter_search_team(team_name)
-    return search_result['twitter_url']
 
 def generate_twitter_csv(team_list):
     raise NotImplementedError

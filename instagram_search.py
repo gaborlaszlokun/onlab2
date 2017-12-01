@@ -48,27 +48,3 @@ def instagram_search_team(query):
                      'instagram_follows' : "NaN",
                      'instagram_url' : "NaN"}
         return page_dict
- 
-def get_instagram_name(team):
-    result = instagram_search_team(team)
-    return result['instagram_name']
-    
-def get_instagram_id(team):
-    result = instagram_search_team(team)
-    return result['instagram_id']
-    
-def get_instagram_media(team):
-    result = instagram_search_team(team)
-    return result['instagram_media']
-       
-def get_instagram_followers(team):
-    result = instagram_search_team(team)
-    return result['instagram_followers']
-    
-def get_instagram_follows(team):
-    result = instagram_search_team(team)
-    return result['instagram_follows']
-    
-def get_instagram_url(team):
-    result = instagram_search_team(team)
-    return result['instagram_url']

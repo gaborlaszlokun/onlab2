@@ -8,10 +8,10 @@ import pandas as pd
 
 team = "ferencvárosi tc"
 
-#print(social_media_search(team))
+print(social_media_search(team))
 
-for key, value in social_media_search(team).items():
-    print (key, ":", value)
+#for key, value in social_media_search(team).items():
+#    print (key, ":", value)
 
 #social_media_search(team)['instagram_name']
 #social_media_search(team)['instagram_id']

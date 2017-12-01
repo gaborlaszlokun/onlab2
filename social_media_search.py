@@ -23,13 +23,6 @@ def print_result(team):
 #    print (social_media_search(team))
     for key, value in social_media_search(team).items():
         print (key, ":", value)
-        
-def main_print(team):
-    print(team)
-    print(social_media_search(team)['facebook_likes'])
-    print(social_media_search(team)['instagram_followers'])
-    print(social_media_search(team)['twitter_followers'])
-    print()
     
 def save_main_teams(team):
     raise NotImplementedError
